@@ -19,8 +19,11 @@ export default class App extends Component {
 	};
 
 	updateStatus = () => {
-		console.log(!this.state.full)
-		firebase.database().ref('status').set(!this.state.full)
+		console.log(!this.state.full);
+		firebase
+			.database()
+			.ref("status")
+			.set(!this.state.full);
 	};
 
 	componentDidMount() {
