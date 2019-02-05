@@ -15,11 +15,10 @@ firebase.initializeApp(firebaseConfig);
 
 export default class App extends Component {
 	state = {
-		full: true
+		loading: true
 	};
 
 	updateStatus = () => {
-		console.log(!this.state.full);
 		firebase
 			.database()
 			.ref("status")
@@ -31,16 +30,20 @@ export default class App extends Component {
 			.database()
 			.ref("status")
 			.on("value", data => {
-				this.setState({ full: data.val() });
+				this.setState({ full: data.val(), loading: false });
 			});
 	}
 
 	render() {
+		const { full, loading } = this.state;
+
 		return (
 			<div class="container">
 				<div>Nitro Cold Brew Status</div>
 				<div>
-					{this.state.full ? (
+					{loading ? (
+						"Getting Status"
+					) : full ? (
 						<img src="../assets/good.png" />
 					) : (
 						<img src="../assets/bad.png" />
