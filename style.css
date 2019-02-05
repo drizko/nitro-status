@@ -1,0 +1,50 @@
+html,
+body {
+	font: 14px/1.21 "Helvetica Neue", arial, sans-serif;
+	font-weight: 400;
+}
+
+h1 {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.container div {
+	padding: 30px;
+	font-size: 40px;
+}
+
+.container img {
+	width: 100px;
+}
+
+button {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: darkcyan;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+button:hover {
+	background-color: darkseagreen;
+}
+
+button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
